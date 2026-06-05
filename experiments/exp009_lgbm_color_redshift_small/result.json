@@ -1,0 +1,143 @@
+{
+  "exp_id": "exp009_lgbm_color_redshift_small",
+  "created_at": "2026-06-05T19:53:39",
+  "purpose": "`exp002_advanced_features` の全盛り timeout を避け、color/redshift/magnitude 統計に絞って LightGBM CV を改善する。",
+  "hypothesis": "feature importance 上位の color/redshift 周辺だけを追加すれば、runtime を抑えつつ `exp001_baseline` の CV balanced_accuracy 0.964030 を上回れる。",
+  "official_metric": "balanced_accuracy",
+  "feature_mode": "color_redshift",
+  "model_params": {
+    "objective": "multiclass",
+    "num_class": 3,
+    "metric": "multi_logloss",
+    "n_estimators": 1200,
+    "learning_rate": 0.06,
+    "num_leaves": 63,
+    "subsample": 0.85,
+    "colsample_bytree": 0.85,
+    "class_weight": "balanced",
+    "random_state": 47,
+    "n_jobs": -1,
+    "verbose": -1,
+    "min_child_samples": 30,
+    "reg_alpha": 0.03,
+    "reg_lambda": 0.3,
+    "max_bin": 255,
+    "force_col_wise": true
+  },
+  "early_stopping_rounds": 80,
+  "cv_balanced_accuracy": 0.9636277696573656,
+  "cv_accuracy": 0.964764690905123,
+  "fold_results": [
+    {
+      "fold": 1,
+      "best_iteration": 1162,
+      "balanced_accuracy": 0.9643631628751272,
+      "accuracy": 0.9661037498917467
+    },
+    {
+      "fold": 2,
+      "best_iteration": 1192,
+      "balanced_accuracy": 0.9634771987508728,
+      "accuracy": 0.964527582921971
+    },
+    {
+      "fold": 3,
+      "best_iteration": 1198,
+      "balanced_accuracy": 0.9628927295863509,
+      "accuracy": 0.9637911474075292
+    },
+    {
+      "fold": 4,
+      "best_iteration": 1036,
+      "balanced_accuracy": 0.9637978757986017,
+      "accuracy": 0.9647870857113164
+    },
+    {
+      "fold": 5,
+      "best_iteration": 1186,
+      "balanced_accuracy": 0.9636078641733259,
+      "accuracy": 0.9646138790497882
+    }
+  ],
+  "classes": [
+    "GALAXY",
+    "QSO",
+    "STAR"
+  ],
+  "features": [
+    "alpha",
+    "delta",
+    "u",
+    "g",
+    "r",
+    "i",
+    "z",
+    "redshift",
+    "spectral_type",
+    "galaxy_population",
+    "u_g",
+    "g_r",
+    "r_i",
+    "i_z",
+    "u_r",
+    "g_i",
+    "u_i",
+    "u_z",
+    "g_z",
+    "r_z",
+    "mag_mean",
+    "mag_std",
+    "mag_min",
+    "mag_max",
+    "mag_range",
+    "redshift_abs",
+    "redshift_sq",
+    "redshift_signed_log1p",
+    "redshift_is_negative",
+    "redshift_x_u_g",
+    "redshift_x_g_r",
+    "redshift_x_r_i",
+    "redshift_x_i_z",
+    "redshift_x_u_z",
+    "redshift_x_g_z",
+    "redshift_x_r_z"
+  ],
+  "categorical_features": [
+    "spectral_type",
+    "galaxy_population"
+  ],
+  "train_shape": [
+    577347,
+    38
+  ],
+  "test_shape": [
+    247435,
+    37
+  ],
+  "sample_submission_shape": [
+    247435,
+    2
+  ],
+  "target_distribution": {
+    "GALAXY": 377480,
+    "QSO": 117143,
+    "STAR": 82724
+  },
+  "missing_train_total": 0,
+  "missing_test_total": 0,
+  "submission_distribution": {
+    "GALAXY": 158665,
+    "QSO": 50843,
+    "STAR": 37927
+  },
+  "submission_checks": {
+    "columns_match_sample_submission": true,
+    "row_count_matches_test": true,
+    "id_matches_sample_submission": true,
+    "labels_are_valid_strings": true,
+    "no_missing_values": true,
+    "all_passed": true
+  },
+  "leakage_risk": "Low to medium: ID-like columns are included as baseline inputs; no target-derived encoding or test-label leakage is used.",
+  "overfitting_risk": "Medium: LightGBM with 2000 estimators uses early stopping; CV/LB gap must be monitored after submission."
+}

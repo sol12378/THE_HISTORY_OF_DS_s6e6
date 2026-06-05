@@ -70,6 +70,30 @@ def add_advanced_features(df: pd.DataFrame) -> pd.DataFrame:
     return out
 
 
+def add_color_redshift_features(df: pd.DataFrame) -> pd.DataFrame:
+    out = add_features(df)
+    bands = ["u", "g", "r", "i", "z"]
+    for left, right in itertools.combinations(bands, 2):
+        out[f"{left}_{right}"] = out[left] - out[right]
+
+    mag = out[bands]
+    out["mag_mean"] = mag.mean(axis=1)
+    out["mag_std"] = mag.std(axis=1)
+    out["mag_min"] = mag.min(axis=1)
+    out["mag_max"] = mag.max(axis=1)
+    out["mag_range"] = out["mag_max"] - out["mag_min"]
+
+    out["redshift_abs"] = out["redshift"].abs()
+    out["redshift_sq"] = out["redshift"] ** 2
+    out["redshift_signed_log1p"] = np.sign(out["redshift"]) * np.log1p(out["redshift"].abs())
+    out["redshift_is_negative"] = (out["redshift"] < 0).astype(np.int8)
+    for color in ["u_g", "g_r", "r_i", "i_z", "u_z", "g_z", "r_z"]:
+        if color in out.columns:
+            out[f"redshift_x_{color}"] = out["redshift"] * out[color]
+
+    return out
+
+
 def align_categories(train: pd.DataFrame, test: pd.DataFrame, features: list[str]) -> tuple[pd.DataFrame, pd.DataFrame, list[str]]:
     categorical_features: list[str] = []
     for col in features:
@@ -113,6 +137,9 @@ def run_lgbm_experiment(
     if feature_mode == "basic":
         train = add_features(train)
         test = add_features(test)
+    elif feature_mode == "color_redshift":
+        train = add_color_redshift_features(train)
+        test = add_color_redshift_features(test)
     elif feature_mode == "advanced":
         train = add_advanced_features(train)
         test = add_advanced_features(test)
@@ -339,6 +366,28 @@ def run_exp004(exp_id: str) -> dict:
     )
 
 
+def run_exp009(exp_id: str) -> dict:
+    return run_lgbm_experiment(
+        exp_id=exp_id,
+        feature_mode="color_redshift",
+        purpose="`exp002_advanced_features` の全盛り timeout を避け、color/redshift/magnitude 統計に絞って LightGBM CV を改善する。",
+        hypothesis="feature importance 上位の color/redshift 周辺だけを追加すれば、runtime を抑えつつ `exp001_baseline` の CV balanced_accuracy 0.964030 を上回れる。",
+        model_params={
+            "n_estimators": 1200,
+            "learning_rate": 0.06,
+            "num_leaves": 63,
+            "min_child_samples": 30,
+            "subsample": 0.85,
+            "colsample_bytree": 0.85,
+            "reg_alpha": 0.03,
+            "reg_lambda": 0.3,
+            "max_bin": 255,
+            "force_col_wise": True,
+        },
+        early_stopping_rounds=80,
+    )
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Run a Stellar Class experiment.")
     parser.add_argument("exp_id", help="Experiment id, e.g. exp001_baseline")
@@ -350,8 +399,10 @@ def main() -> None:
         run_exp002(args.exp_id)
     elif args.exp_id == "exp004_lgbm_basic_proba":
         run_exp004(args.exp_id)
+    elif args.exp_id == "exp009_lgbm_color_redshift_small":
+        run_exp009(args.exp_id)
     else:
-        raise ValueError("Implemented experiments: exp001_baseline, exp002_advanced_features, exp004_lgbm_basic_proba")
+        raise ValueError("Implemented experiments: exp001_baseline, exp002_advanced_features, exp004_lgbm_basic_proba, exp009_lgbm_color_redshift_small")
 
 
 if __name__ == "__main__":

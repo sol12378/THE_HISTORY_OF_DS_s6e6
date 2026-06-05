@@ -1,0 +1,63 @@
+{
+  "exp_id": "exp013_catboost_threshold_search",
+  "source_exp": "exp010_catboost_gpu_basic",
+  "created_at": "2026-06-05T19:57:27",
+  "purpose": "Optimize class multipliers on exp001 OOF probabilities for official balanced accuracy.",
+  "official_metric": "balanced_accuracy",
+  "baseline": {
+    "balanced_accuracy": 0.9512132702876039,
+    "accuracy": 0.9650106435124803,
+    "multipliers": {
+      "GALAXY": 1.0,
+      "QSO": 1.0,
+      "STAR": 1.0
+    },
+    "confusion_matrix": [
+      [
+        368718,
+        3428,
+        5334
+      ],
+      [
+        3177,
+        112883,
+        1083
+      ],
+      [
+        6498,
+        681,
+        75545
+      ]
+    ]
+  },
+  "best": {
+    "balanced_accuracy": 0.9547793963173342,
+    "accuracy": 0.9647075329048216,
+    "multipliers": {
+      "GALAXY": 1.0,
+      "QSO": 1.3,
+      "STAR": 1.3
+    },
+    "confusion_matrix": [
+      [
+        367216,
+        3913,
+        6351
+      ],
+      [
+        2768,
+        113267,
+        1108
+      ],
+      [
+        5549,
+        687,
+        76488
+      ]
+    ]
+  },
+  "delta_balanced_accuracy": 0.0035661260297302766,
+  "delta_accuracy": -0.000303110607658752,
+  "leakage_risk": "Medium: multipliers are optimized directly on OOF labels. This is post-processing risk, not target leakage into model training.",
+  "overfitting_risk": "Medium-high: only two scalar multipliers are tuned, but the same OOF labels are used for selection and evaluation."
+}

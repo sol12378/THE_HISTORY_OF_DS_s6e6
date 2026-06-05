@@ -1,0 +1,29 @@
+exp_id: exp009_lgbm_color_redshift_small
+seed: 42
+
+base: src/stellar_class/config/default.yaml
+
+features:
+  sets:
+    - color_redshift
+
+model:
+  name: lightgbm_color_redshift_small
+  params:
+    objective: multiclass
+    metric: multi_logloss
+    learning_rate: 0.06
+    n_estimators: 1200
+    num_leaves: 63
+    min_child_samples: 30
+    subsample: 0.85
+    colsample_bytree: 0.85
+    reg_alpha: 0.03
+    reg_lambda: 0.3
+    max_bin: 255
+    force_col_wise: true
+    class_weight: balanced
+
+training:
+  n_folds: 5
+  early_stopping_rounds: 80

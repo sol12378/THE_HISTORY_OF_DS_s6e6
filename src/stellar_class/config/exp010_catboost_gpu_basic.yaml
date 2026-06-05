@@ -1,0 +1,26 @@
+exp_id: exp010_catboost_gpu_basic
+seed: 42
+
+base: src/stellar_class/config/default.yaml
+
+features:
+  sets:
+    - basic
+
+model:
+  name: catboost_gpu_basic
+  params:
+    loss_function: MultiClass
+    eval_metric: MultiClass
+    task_type: GPU
+    devices: "0"
+    iterations: 600
+    learning_rate: 0.08
+    depth: 8
+    l2_leaf_reg: 5.0
+    bootstrap_type: Bayesian
+    bagging_temperature: 0.5
+
+training:
+  n_folds: 3
+  purpose: diagnostic

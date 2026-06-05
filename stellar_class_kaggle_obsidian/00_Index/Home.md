@@ -18,4 +18,5 @@
 
 - Best submitted LB is `exp008_nina_weighted_vote` at 0.97074.
 - Best diagnostic CV is `exp003_oof_threshold_search` at 0.964788.
-- Next fast experiments: keep public-blend submissions separate from model CV, then work on CatBoost/XGBoost/model stacking or external source-data validation.
+- Best self-model submitted LB is `exp014_lgbm_catboost_blend` at 0.96545.
+- Next fast experiments: XGBoost GPU diagnostic, stronger LightGBM threshold search, or external source-data validation.
