@@ -5,7 +5,7 @@
 | Type | Experiment | CV | LB | Notes |
 |---|---|---:|---:|---|
 | Baseline | exp001_baseline | 0.964030 | 0.96462 | LightGBM + color indices, official balanced accuracy |
-| Best CV | exp020_oof_stacker_with_xgb_deep | 0.965901 | 0.96642 | Logistic OOF stacker with an additional deep GPU XGBoost base |
+| Best CV | exp024_oof_stacker_with_lgbm_basic | 0.966112 | | Logistic OOF stacker with an additional basic LightGBM base; API submission failed likely due daily limit |
 | Best LB | exp008_nina_weighted_vote | | 0.97074 | External public submission weighted vote; high leakage/overfitting risk |
 
 ## Experiments
@@ -33,3 +33,7 @@
 | exp020_oof_stacker_with_xgb_deep | 2026-06-05 | Add exp019 deep GPU XGBoost to the logistic OOF stacker. | 0.965901 | 0.96642 | submitted | New best self-model CV; LB only slightly improved, so future submissions need strong raw-CV gains |
 | exp021_xgboost_gpu_shallow | 2026-06-05 | Train a shallow/regularized GPU XGBoost diagnostic for stack diversity. | 0.964128 | | completed | Stronger standalone than exp019, but only useful if stack improves |
 | exp022_oof_stacker_with_xgb_shallow | 2026-06-05 | Add exp021 shallow GPU XGBoost to the exp020 stack. | 0.965864 | | no_submit | Below exp020 CV, so no API submission under confident-CV-only rule |
+| exp023_lgbm_basic_fast | 2026-06-05 | Train a fast basic-feature LightGBM base with OOF/test probabilities. | 0.963713 | | completed | Not a standalone submission; useful as stack diversity |
+| exp024_oof_stacker_with_lgbm_basic | 2026-06-05 | Add exp023 basic LightGBM to the exp020 stack. | 0.966112 | | api_failed | New best CV; API submission failed with 400 likely due daily submission limit |
+| exp025_lgbm_color_regularized | 2026-06-05 | Train a regularized stochastic color/redshift LightGBM base. | 0.962930 | | completed | Weak standalone; tested only as stack diversity |
+| exp026_oof_stacker_with_two_lgbm | 2026-06-05 | Add both exp023 and exp025 LightGBM bases to the stack. | 0.966092 | | no_submit | Below exp024; no API submission |

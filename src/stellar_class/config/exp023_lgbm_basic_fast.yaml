@@ -1,0 +1,16 @@
+feature_mode: basic
+n_splits: 3
+fold_seed: 27182
+early_stopping_rounds: 80
+lightgbm_params:
+  n_estimators: 1100
+  learning_rate: 0.055
+  num_leaves: 63
+  min_child_samples: 35
+  subsample: 0.86
+  colsample_bytree: 0.86
+  class_weight: balanced
+  reg_alpha: 0.04
+  reg_lambda: 0.4
+  max_bin: 255
+  force_col_wise: true

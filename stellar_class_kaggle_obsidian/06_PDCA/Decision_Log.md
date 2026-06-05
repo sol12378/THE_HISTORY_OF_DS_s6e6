@@ -15,3 +15,5 @@
 | 2026-06-05 | Tighten API submission policy to confident CV candidates | User requested API submissions only for candidates with confident CV | Future submissions must record CV, comparison target, risk, and confidence rationale before submission |
 | 2026-06-05 | Keep `exp019` only as a stack diversity base | Standalone CV was 0.962960, but adding it in `exp020` improved stack CV to 0.965901 | Do not submit weak standalone models; use them only if stack CV improves |
 | 2026-06-05 | Do not submit `exp022` | CV 0.965864 was below current best `exp020` CV 0.965901 | Confident-CV-only API submission rule prevented a low-confidence submission |
+| 2026-06-05 | Treat `exp024` as current best CV but not confirmed LB | CV improved to 0.966112, but Kaggle API returned 400 and submission history did not register it | Keep `exp020` as best confirmed self-model LB; retry `exp024` only after submission limit resets |
+| 2026-06-05 | Do not submit `exp026` | CV 0.966092 was below `exp024` CV 0.966112 | Adding the weak regularized LightGBM did not improve the current best stack |

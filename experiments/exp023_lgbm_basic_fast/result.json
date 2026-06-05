@@ -1,0 +1,101 @@
+{
+  "exp_id": "exp023_lgbm_basic_fast",
+  "created_at": "2026-06-05T21:28:44",
+  "purpose": "Create a fast LightGBM OOF/test_proba base for the self-model stacker.",
+  "hypothesis": "A basic-feature LightGBM base with a different fold seed can add diversity to the current OOF stacker and improve trusted CV.",
+  "official_metric": "balanced_accuracy",
+  "feature_mode": "basic",
+  "n_splits": 3,
+  "lightgbm_params": {
+    "objective": "multiclass",
+    "num_class": 3,
+    "metric": "multi_logloss",
+    "n_estimators": 1100,
+    "learning_rate": 0.055,
+    "num_leaves": 63,
+    "min_child_samples": 35,
+    "subsample": 0.86,
+    "colsample_bytree": 0.86,
+    "class_weight": "balanced",
+    "reg_alpha": 0.04,
+    "reg_lambda": 0.4,
+    "max_bin": 255,
+    "force_col_wise": true,
+    "random_state": 42,
+    "n_jobs": -1,
+    "verbose": -1
+  },
+  "early_stopping_rounds": 80,
+  "cv_balanced_accuracy": 0.963713235955923,
+  "cv_accuracy": 0.9641619338110357,
+  "fold_results": [
+    {
+      "fold": 1,
+      "best_iteration": 1092,
+      "balanced_accuracy": 0.9633461865264352,
+      "accuracy": 0.9635955499898674
+    },
+    {
+      "fold": 2,
+      "best_iteration": 1043,
+      "balanced_accuracy": 0.9637972745139468,
+      "accuracy": 0.9644113505396235
+    },
+    {
+      "fold": 3,
+      "best_iteration": 1099,
+      "balanced_accuracy": 0.9639962311937295,
+      "accuracy": 0.964478900903616
+    }
+  ],
+  "classes": [
+    "GALAXY",
+    "QSO",
+    "STAR"
+  ],
+  "features": [
+    "alpha",
+    "delta",
+    "u",
+    "g",
+    "r",
+    "i",
+    "z",
+    "redshift",
+    "spectral_type",
+    "galaxy_population",
+    "u_g",
+    "g_r",
+    "r_i",
+    "i_z",
+    "u_r",
+    "g_i"
+  ],
+  "categorical_features": [
+    "spectral_type",
+    "galaxy_population"
+  ],
+  "train_shape": [
+    577347,
+    18
+  ],
+  "test_shape": [
+    247435,
+    17
+  ],
+  "submission_distribution": {
+    "GALAXY": 158432,
+    "QSO": 50922,
+    "STAR": 38081
+  },
+  "submission_checks": {
+    "columns_match_sample_submission": true,
+    "row_count_matches_sample_submission": true,
+    "id_matches_sample_submission": true,
+    "labels_are_valid_strings": true,
+    "no_missing_values": true,
+    "all_passed": true
+  },
+  "leakage_risk": "Low: official train/test features only; no external labels or target-derived encodings.",
+  "overfitting_risk": "Medium: fast 3-fold LightGBM diagnostic; stack value should be judged by OOF stack improvement."
+}

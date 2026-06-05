@@ -23,6 +23,10 @@
 | [[exp020_oof_stacker_with_xgb_deep]] | 2026-06-05 | submitted | 0.965901 | 0.96642 | New best self-model CV, tiny LB gain |
 | [[exp021_xgboost_gpu_shallow]] | 2026-06-05 | completed | 0.964128 | | Shallow XGBoost diversity candidate |
 | [[exp022_oof_stacker_with_xgb_shallow]] | 2026-06-05 | no_submit | 0.965864 | | Below exp020, not submitted |
+| [[exp023_lgbm_basic_fast]] | 2026-06-05 | completed | 0.963713 | | Basic LightGBM stack base |
+| [[exp024_oof_stacker_with_lgbm_basic]] | 2026-06-05 | api_failed | 0.966112 | | New best CV; submission failed likely due daily limit |
+| [[exp025_lgbm_color_regularized]] | 2026-06-05 | completed | 0.962930 | | Regularized LightGBM diversity base |
+| [[exp026_oof_stacker_with_two_lgbm]] | 2026-06-05 | no_submit | 0.966092 | | Below exp024, not submitted |
 
 | Exp | Status | CV | LB | Decision |
 |---|---|---:|---:|---|

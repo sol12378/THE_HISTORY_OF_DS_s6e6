@@ -1,0 +1,16 @@
+feature_mode: color_redshift
+n_splits: 3
+fold_seed: 16180
+early_stopping_rounds: 70
+lightgbm_params:
+  n_estimators: 900
+  learning_rate: 0.06
+  num_leaves: 31
+  min_child_samples: 60
+  subsample: 0.75
+  colsample_bytree: 0.70
+  class_weight: balanced
+  reg_alpha: 0.1
+  reg_lambda: 1.0
+  max_bin: 127
+  force_col_wise: true
