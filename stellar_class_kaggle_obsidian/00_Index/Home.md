@@ -16,6 +16,6 @@
 
 ## Current Focus
 
-- exp001_baseline submitted.
-- Review CV/LB gap and feature importance.
-- Plan next fast experiments: ID-like drop comparison, all color indices, redshift interactions.
+- Best submitted LB remains `exp001_baseline` at 0.96462.
+- Best diagnostic CV is `exp003_oof_threshold_search` at 0.964788.
+- Next fast experiments: save test probabilities, split advanced features into smaller groups, and validate threshold/post-processing against LB.

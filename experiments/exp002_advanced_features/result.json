@@ -1,0 +1,14 @@
+{
+  "exp_id": "exp002_advanced_features",
+  "created_at": "2026-06-05T17:26:48",
+  "status": "timeout",
+  "purpose": "Test advanced color, magnitude, redshift interaction, and sky-coordinate features with LightGBM.",
+  "official_metric": "balanced_accuracy",
+  "cv_balanced_accuracy": null,
+  "cv_accuracy": null,
+  "notes": "The original high-capacity setting timed out after 40 minutes, and the reduced fast setting still timed out after 20 minutes. No OOF or submission artifact was produced.",
+  "decision": "abandoned_for_now",
+  "next_action": "Split advanced feature validation into smaller groups or use fewer exploratory folds before full 5-fold CV.",
+  "leakage_risk": "Low for implementation because no completed model artifact was produced. Spatial features remain low-medium risk for future experiments.",
+  "overfitting_risk": "High runtime/complexity risk; model capacity and feature count were too large for fast iteration."
+}

@@ -1,0 +1,26 @@
+exp_id: exp002_advanced_features
+seed: 42
+
+base: src/stellar_class/config/default.yaml
+
+features:
+  sets:
+    - advanced
+
+model:
+  name: lightgbm_advanced_features
+  params:
+    objective: multiclass
+    metric: multi_logloss
+    learning_rate: 0.08
+    n_estimators: 900
+    num_leaves: 63
+    min_child_samples: 30
+    reg_alpha: 0.05
+    reg_lambda: 0.5
+    max_bin: 127
+    force_col_wise: true
+    class_weight: balanced
+
+training:
+  early_stopping_rounds: 60

@@ -1,0 +1,63 @@
+{
+  "exp_id": "exp003_oof_threshold_search",
+  "source_exp": "exp001_baseline",
+  "created_at": "2026-06-05T17:26:48",
+  "purpose": "Optimize class multipliers on exp001 OOF probabilities for official balanced accuracy.",
+  "official_metric": "balanced_accuracy",
+  "baseline": {
+    "balanced_accuracy": 0.9640303728887073,
+    "accuracy": 0.9651388159980047,
+    "multipliers": {
+      "GALAXY": 1.0,
+      "QSO": 1.0,
+      "STAR": 1.0
+    },
+    "confusion_matrix": [
+      [
+        364384,
+        4575,
+        8521
+      ],
+      [
+        2239,
+        113827,
+        1077
+      ],
+      [
+        3253,
+        462,
+        79009
+      ]
+    ]
+  },
+  "best": {
+    "balanced_accuracy": 0.9647884055878496,
+    "accuracy": 0.9634136836252721,
+    "multipliers": {
+      "GALAXY": 1.0,
+      "QSO": 1.2200000000000002,
+      "STAR": 1.3
+    },
+    "confusion_matrix": [
+      [
+        362816,
+        4904,
+        9760
+      ],
+      [
+        2070,
+        113964,
+        1109
+      ],
+      [
+        2826,
+        454,
+        79444
+      ]
+    ]
+  },
+  "delta_balanced_accuracy": 0.0007580326991423192,
+  "delta_accuracy": -0.0017251323727325296,
+  "leakage_risk": "Medium: multipliers are optimized directly on OOF labels. This is post-processing risk, not target leakage into model training.",
+  "overfitting_risk": "Medium-high: only two scalar multipliers are tuned, but the same OOF labels are used for selection and evaluation."
+}

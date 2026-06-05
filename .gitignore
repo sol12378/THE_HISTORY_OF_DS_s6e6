@@ -17,6 +17,7 @@ data/submissions/*
 outputs/*
 experiments/*/oof.csv
 experiments/*/submission.csv
+experiments/*/test_proba.csv
 experiments/*/*.pkl
 experiments/*/*.model
 experiments/*/*.joblib
