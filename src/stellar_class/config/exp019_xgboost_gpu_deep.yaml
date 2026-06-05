@@ -1,0 +1,14 @@
+feature_mode: color_redshift
+n_splits: 3
+fold_seed: 2026
+num_boost_round: 1800
+early_stopping_rounds: 100
+xgboost_params:
+  eta: 0.035
+  max_depth: 9
+  min_child_weight: 6.0
+  subsample: 0.9
+  colsample_bytree: 0.9
+  lambda: 2.0
+  alpha: 0.03
+  max_bin: 256

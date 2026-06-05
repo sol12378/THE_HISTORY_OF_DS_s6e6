@@ -5,7 +5,7 @@
 | Type | Experiment | CV | LB | Notes |
 |---|---|---:|---:|---|
 | Baseline | exp001_baseline | 0.964030 | 0.96462 | LightGBM + color indices, official balanced accuracy |
-| Best CV | exp018_oof_logistic_stacker | 0.965560 | 0.96641 | Logistic OOF stacker over LightGBM, CatBoost, and GPU XGBoost |
+| Best CV | exp020_oof_stacker_with_xgb_deep | 0.965901 | 0.96642 | Logistic OOF stacker with an additional deep GPU XGBoost base |
 | Best LB | exp008_nina_weighted_vote | | 0.97074 | External public submission weighted vote; high leakage/overfitting risk |
 
 ## Experiments
@@ -29,3 +29,5 @@
 | exp016_xgboost_gpu_basic | 2026-06-05 | Train GPU XGBoost diagnostic for model diversity. | 0.964020 | | completed | Strong enough to use as blend candidate, but below best thresholded LightGBM standalone |
 | exp017_lgbm_xgboost_blend | 2026-06-05 | Blend exp009 LightGBM and exp016 GPU XGBoost OOF/test probabilities. | 0.965235 | 0.96597 | submitted | New best self-model CV and LB; XGBoost adds useful diversity |
 | exp018_oof_logistic_stacker | 2026-06-05 | Train a nested-CV logistic OOF stacker over available self-model probabilities. | 0.965560 | 0.96641 | submitted | New best self-model CV and LB; stacker improves over fixed two-model blend |
+| exp019_xgboost_gpu_deep | 2026-06-05 | Train a deeper/longer GPU XGBoost diagnostic for stack diversity. | 0.962960 | | completed | Weak standalone balanced accuracy but useful as an additional stack base |
+| exp020_oof_stacker_with_xgb_deep | 2026-06-05 | Add exp019 deep GPU XGBoost to the logistic OOF stacker. | 0.965901 | 0.96642 | submitted | New best self-model CV; LB only slightly improved, so future submissions need strong raw-CV gains |

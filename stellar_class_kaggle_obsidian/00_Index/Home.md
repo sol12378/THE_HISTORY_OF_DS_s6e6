@@ -17,7 +17,7 @@
 ## Current Focus
 
 - Best submitted LB is `exp008_nina_weighted_vote` at 0.97074.
-- Best diagnostic CV is `exp018_oof_logistic_stacker` at 0.965560.
-- Best self-model submitted LB is `exp018_oof_logistic_stacker` at 0.96641.
+- Best diagnostic CV is `exp020_oof_stacker_with_xgb_deep` at 0.965901.
+- Best self-model submitted LB is `exp020_oof_stacker_with_xgb_deep` at 0.96642.
 - External SDSS17 direct label transfer is not supported by `exp015`; use it only as possible auxiliary training data after validation.
-- Next fast experiments: stronger GPU XGBoost, OOF stacker, external SDSS17 auxiliary-training test, or safer LB blend search.
+- Next fast experiments: shallow/regularized GPU XGBoost diversity, LightGBM test_proba rerun, external SDSS17 auxiliary-training test, or safer LB blend search.

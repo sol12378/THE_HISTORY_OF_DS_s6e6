@@ -11,3 +11,4 @@
 | 2026-06-05 | 53390199 | exp014_lgbm_catboost_blend | 0.964652 | 0.96545 | +0.000798 | Best self-model LB; CatBoost blend weight 0 |
 | 2026-06-05 | 53391073 | exp017_lgbm_xgboost_blend | 0.965235 | 0.96597 | +0.000735 | New best self-model LB; XGBoost adds useful diversity |
 | 2026-06-05 | 53391289 | exp018_oof_logistic_stacker | 0.965560 | 0.96641 | +0.000850 | New best self-model LB; logistic stacker over LightGBM/CatBoost/XGBoost |
+| 2026-06-05 | 53391536 | exp020_oof_stacker_with_xgb_deep | 0.965901 | 0.96642 | +0.000519 | New best self-model CV/LB; raw stacker gain but tiny LB improvement |
