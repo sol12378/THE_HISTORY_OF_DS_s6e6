@@ -15,6 +15,7 @@
 - Public LB balanced_accuracy: 0.964620
 - LB - CV gap: +0.000590
 - Kaggle submission ref: 53383739
+- Kaggle API submission ref: 53383938
 - Train shape: (577347, 18)
 - Test shape: (247435, 17)
 - Target distribution: {'GALAXY': 377480, 'QSO': 117143, 'STAR': 82724}
@@ -37,4 +38,5 @@
 ## Next Actions
 
 - CV/LB gap は小さく、validation は初回 baseline として信頼できそう。
+- API submission でも同じ Public LB 0.96462 を確認済み。
 - 次フェーズでは ID 系 drop 比較、全色指数、redshift interaction を検証する。

@@ -78,6 +78,8 @@
   ],
   "kaggle_submission_ref": 53383739,
   "kaggle_submission_status": "COMPLETE",
+  "kaggle_api_submission_ref": 53383938,
+  "kaggle_api_submission_status": "COMPLETE",
   "lb_public_score": 0.96462,
   "cv_lb_gap": 0.0005896271112926594,
   "target_distribution": {
