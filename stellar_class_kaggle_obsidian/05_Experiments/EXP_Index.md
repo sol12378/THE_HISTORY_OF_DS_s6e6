@@ -15,6 +15,9 @@
 | [[exp012_exp009_threshold_submission]] | 2026-06-05 | submitted | 0.964604 | 0.96523 | Best self-model LB before exp014 |
 | [[exp013_catboost_threshold_search]] | 2026-06-05 | diagnostic_success | 0.954779 | | CatBoost still below LightGBM |
 | [[exp014_lgbm_catboost_blend]] | 2026-06-05 | submitted | 0.964652 | 0.96545 | Best self-model LB; CatBoost weight 0 |
+| [[exp015_sdss17_source_match]] | 2026-06-05 | diagnostic_completed | | | SDSS17 direct matching rejected for now |
+| [[exp016_xgboost_gpu_basic]] | 2026-06-05 | completed | 0.964020 | | GPU XGBoost is useful as a diversity candidate |
+| [[exp017_lgbm_xgboost_blend]] | 2026-06-05 | submitted | 0.965235 | 0.96597 | New best self-model CV and LB |
 
 | Exp | Status | CV | LB | Decision |
 |---|---|---:|---:|---|

@@ -9,3 +9,4 @@
 | 2026-06-05 | 53387906 | exp008_nina_weighted_vote | | 0.97074 | | Top-12 weighted vote from `nina2025/ps-s6e6`; no local CV |
 | 2026-06-05 | 53389973 | exp012_exp009_threshold_submission | 0.964604 | 0.96523 | +0.000626 | Thresholded exp009 LightGBM |
 | 2026-06-05 | 53390199 | exp014_lgbm_catboost_blend | 0.964652 | 0.96545 | +0.000798 | Best self-model LB; CatBoost blend weight 0 |
+| 2026-06-05 | 53391073 | exp017_lgbm_xgboost_blend | 0.965235 | 0.96597 | +0.000735 | New best self-model LB; XGBoost adds useful diversity |

@@ -5,7 +5,7 @@
 | Type | Experiment | CV | LB | Notes |
 |---|---|---:|---:|---|
 | Baseline | exp001_baseline | 0.964030 | 0.96462 | LightGBM + color indices, official balanced accuracy |
-| Best CV | exp003_oof_threshold_search | 0.964788 | | OOF class multiplier diagnostic; no LB yet |
+| Best CV | exp017_lgbm_xgboost_blend | 0.965235 | 0.96597 | LightGBM + GPU XGBoost OOF blend with class multipliers |
 | Best LB | exp008_nina_weighted_vote | | 0.97074 | External public submission weighted vote; high leakage/overfitting risk |
 
 ## Experiments
@@ -25,3 +25,6 @@
 | exp012_exp009_threshold_submission | 2026-06-05 | Apply exp011 multipliers to exp009 test probabilities. | 0.964604 | 0.96523 | submitted | Best self-model LB before exp014 |
 | exp013_catboost_threshold_search | 2026-06-05 | Optimize class multipliers on exp010 CatBoost OOF. | 0.954779 | | diagnostic_success | Still below LightGBM; do not use standalone |
 | exp014_lgbm_catboost_blend | 2026-06-05 | Blend exp009 LightGBM and exp010 CatBoost probabilities. | 0.964652 | 0.96545 | submitted | CatBoost weight optimized to 0; thresholded exp009 improved self-model LB |
+| exp015_sdss17_source_match | 2026-06-05 | Check whether public SDSS17 data can directly match official train/test rows. | | | diagnostic_completed | Rounded exact matches were essentially zero; sampled nearest-neighbor label balanced accuracy only ~0.81, so direct label transfer is rejected for now |
+| exp016_xgboost_gpu_basic | 2026-06-05 | Train GPU XGBoost diagnostic for model diversity. | 0.964020 | | completed | Strong enough to use as blend candidate, but below best thresholded LightGBM standalone |
+| exp017_lgbm_xgboost_blend | 2026-06-05 | Blend exp009 LightGBM and exp016 GPU XGBoost OOF/test probabilities. | 0.965235 | 0.96597 | submitted | New best self-model CV and LB; XGBoost adds useful diversity |

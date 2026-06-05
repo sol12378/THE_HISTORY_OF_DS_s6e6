@@ -1,0 +1,199 @@
+{
+  "exp_id": "exp015_sdss17_source_match",
+  "created_at": "2026-06-05T20:37:12",
+  "purpose": "PB狙いに向けて、公式train/testと公開SDSS17元データ候補の一致可能性を診断する。",
+  "hypothesis": "PlaygroundデータがSDSS17由来なら、丸め一致または近傍一致で一部行を高信頼に照合でき、PBで強い補助信号になる可能性がある。",
+  "official_metric": "balanced_accuracy",
+  "external_source": "data\\external\\sdss17\\star_classification.csv",
+  "external_source_url": "https://www.kaggle.com/datasets/fedesoriano/stellar-classification-dataset-sdss17",
+  "match_columns": [
+    "alpha",
+    "delta",
+    "u",
+    "g",
+    "r",
+    "i",
+    "z",
+    "redshift"
+  ],
+  "train_shape": [
+    577347,
+    12
+  ],
+  "test_shape": [
+    247435,
+    11
+  ],
+  "external_shape": [
+    100000,
+    18
+  ],
+  "train_target_distribution": {
+    "GALAXY": 377480,
+    "QSO": 117143,
+    "STAR": 82724
+  },
+  "external_target_distribution": {
+    "GALAXY": 59445,
+    "STAR": 21594,
+    "QSO": 18961
+  },
+  "rounded_match_summary": [
+    {
+      "decimals": 6,
+      "train_matches": 0,
+      "train_match_rate": 0.0,
+      "test_matches": 0,
+      "test_match_rate": 0.0,
+      "train_label_accuracy_on_matches": null,
+      "train_label_balanced_accuracy_on_matches": null,
+      "train_ambiguous_matches": 0,
+      "test_ambiguous_matches": 0
+    },
+    {
+      "decimals": 5,
+      "train_matches": 0,
+      "train_match_rate": 0.0,
+      "test_matches": 0,
+      "test_match_rate": 0.0,
+      "train_label_accuracy_on_matches": null,
+      "train_label_balanced_accuracy_on_matches": null,
+      "train_ambiguous_matches": 0,
+      "test_ambiguous_matches": 0
+    },
+    {
+      "decimals": 4,
+      "train_matches": 0,
+      "train_match_rate": 0.0,
+      "test_matches": 0,
+      "test_match_rate": 0.0,
+      "train_label_accuracy_on_matches": null,
+      "train_label_balanced_accuracy_on_matches": null,
+      "train_ambiguous_matches": 0,
+      "test_ambiguous_matches": 0
+    },
+    {
+      "decimals": 3,
+      "train_matches": 0,
+      "train_match_rate": 0.0,
+      "test_matches": 0,
+      "test_match_rate": 0.0,
+      "train_label_accuracy_on_matches": null,
+      "train_label_balanced_accuracy_on_matches": null,
+      "train_ambiguous_matches": 0,
+      "test_ambiguous_matches": 0
+    },
+    {
+      "decimals": 2,
+      "train_matches": 0,
+      "train_match_rate": 0.0,
+      "test_matches": 0,
+      "test_match_rate": 0.0,
+      "train_label_accuracy_on_matches": null,
+      "train_label_balanced_accuracy_on_matches": null,
+      "train_ambiguous_matches": 0,
+      "test_ambiguous_matches": 0
+    },
+    {
+      "decimals": 1,
+      "train_matches": 0,
+      "train_match_rate": 0.0,
+      "test_matches": 1,
+      "test_match_rate": 4.041465435366864e-06,
+      "train_label_accuracy_on_matches": null,
+      "train_label_balanced_accuracy_on_matches": null,
+      "train_ambiguous_matches": 0,
+      "test_ambiguous_matches": 0
+    }
+  ],
+  "nearest_neighbor_summary": {
+    "train_distance_quantiles": {
+      "0.0": 0.020031032846392446,
+      "0.001": 0.032820230446870005,
+      "0.01": 0.05045985590639001,
+      "0.05": 0.07090312708680499,
+      "0.1": 0.08499915397590846,
+      "0.5": 0.15583006429958407,
+      "0.9": 0.2811222402994952
+    },
+    "test_distance_quantiles": {
+      "0.0": 0.024034842257676915,
+      "0.001": 0.03366808250679692,
+      "0.01": 0.05053282503141769,
+      "0.05": 0.07265130088380833,
+      "0.1": 0.0861543870154595,
+      "0.5": 0.15804695413912417,
+      "0.9": 0.28199094494113314
+    },
+    "thresholds": [
+      {
+        "scaled_distance_threshold": 0.001,
+        "train_matches": 0,
+        "train_match_rate": 0.0,
+        "test_matches": 0,
+        "test_match_rate": 0.0,
+        "train_label_accuracy_on_matches": null,
+        "train_label_balanced_accuracy_on_matches": null
+      },
+      {
+        "scaled_distance_threshold": 0.003,
+        "train_matches": 0,
+        "train_match_rate": 0.0,
+        "test_matches": 0,
+        "test_match_rate": 0.0,
+        "train_label_accuracy_on_matches": null,
+        "train_label_balanced_accuracy_on_matches": null
+      },
+      {
+        "scaled_distance_threshold": 0.01,
+        "train_matches": 0,
+        "train_match_rate": 0.0,
+        "test_matches": 0,
+        "test_match_rate": 0.0,
+        "train_label_accuracy_on_matches": null,
+        "train_label_balanced_accuracy_on_matches": null
+      },
+      {
+        "scaled_distance_threshold": 0.03,
+        "train_matches": 10,
+        "train_match_rate": 0.0005,
+        "test_matches": 6,
+        "test_match_rate": 0.0003,
+        "train_label_accuracy_on_matches": 0.7,
+        "train_label_balanced_accuracy_on_matches": 0.5
+      },
+      {
+        "scaled_distance_threshold": 0.1,
+        "train_matches": 3550,
+        "train_match_rate": 0.1775,
+        "test_matches": 3410,
+        "test_match_rate": 0.1705,
+        "train_label_accuracy_on_matches": 0.8732394366197183,
+        "train_label_balanced_accuracy_on_matches": 0.8126622118184884
+      },
+      {
+        "scaled_distance_threshold": 0.3,
+        "train_matches": 18437,
+        "train_match_rate": 0.92185,
+        "test_matches": 18437,
+        "test_match_rate": 0.92185,
+        "train_label_accuracy_on_matches": 0.8361447090090579,
+        "train_label_balanced_accuracy_on_matches": 0.810782131485113
+      },
+      {
+        "scaled_distance_threshold": 1.0,
+        "train_matches": 19998,
+        "train_match_rate": 0.9999,
+        "test_matches": 19998,
+        "test_match_rate": 0.9999,
+        "train_label_accuracy_on_matches": 0.8275327532753275,
+        "train_label_balanced_accuracy_on_matches": 0.808642907404371
+      }
+    ],
+    "train_sample_size": 20000,
+    "test_sample_size": 20000,
+    "external_size": 100000
+  },
+  "leakage_risk": "Medium-high: external source labels may reveal source objects if exact/near matches are accepted. Use only thresholds validated by train match label agreement and document rule compatibility before submission.",
+  "overfitting_risk": "Medium: thresholds chosen after observing train/test match rates can overfit. Prefer predeclared thresholds based on train label agreement and distance distribution."
+}

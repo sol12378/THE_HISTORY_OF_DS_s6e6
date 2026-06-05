@@ -17,6 +17,7 @@
 ## Current Focus
 
 - Best submitted LB is `exp008_nina_weighted_vote` at 0.97074.
-- Best diagnostic CV is `exp003_oof_threshold_search` at 0.964788.
-- Best self-model submitted LB is `exp014_lgbm_catboost_blend` at 0.96545.
-- Next fast experiments: XGBoost GPU diagnostic, stronger LightGBM threshold search, or external source-data validation.
+- Best diagnostic CV is `exp017_lgbm_xgboost_blend` at 0.965235.
+- Best self-model submitted LB is `exp017_lgbm_xgboost_blend` at 0.96597.
+- External SDSS17 direct label transfer is not supported by `exp015`; use it only as possible auxiliary training data after validation.
+- Next fast experiments: stronger GPU XGBoost, OOF stacker, external SDSS17 auxiliary-training test, or safer LB blend search.
