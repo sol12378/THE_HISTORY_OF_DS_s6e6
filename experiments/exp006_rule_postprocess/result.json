@@ -1,0 +1,194 @@
+{
+  "exp_id": "exp006_rule_postprocess",
+  "source_exp": "exp001_baseline",
+  "created_at": "2026-06-05T18:08:22",
+  "purpose": "Search simple redshift/category rules on exp001 hard predictions to improve balanced accuracy.",
+  "official_metric": "balanced_accuracy",
+  "baseline": {
+    "balanced_accuracy": 0.9640303728887073,
+    "accuracy": 0.9651388159980047,
+    "confusion_matrix": [
+      [
+        364384,
+        4575,
+        8521
+      ],
+      [
+        2239,
+        113827,
+        1077
+      ],
+      [
+        3253,
+        462,
+        79009
+      ]
+    ]
+  },
+  "best": {
+    "balanced_accuracy": 0.9641084843888734,
+    "accuracy": 0.96500717939125,
+    "confusion_matrix": [
+      [
+        364234,
+        4734,
+        8512
+      ],
+      [
+        2166,
+        113901,
+        1076
+      ],
+      [
+        3253,
+        462,
+        79009
+      ]
+    ],
+    "rules": [
+      {
+        "from_class": "GALAXY",
+        "to_class": "QSO",
+        "direction": "gt",
+        "threshold": 1.6,
+        "category_column": null,
+        "category_value": null,
+        "affected": 228
+      },
+      {
+        "from_class": "STAR",
+        "to_class": "GALAXY",
+        "direction": "gt",
+        "threshold": 0.28,
+        "category_column": "spectral_type",
+        "category_value": "M",
+        "affected": 10
+      },
+      {
+        "from_class": "GALAXY",
+        "to_class": "QSO",
+        "direction": "gt",
+        "threshold": 1.525,
+        "category_column": "spectral_type",
+        "category_value": "O/B",
+        "affected": 22
+      }
+    ]
+  },
+  "history": [
+    {
+      "step": 1,
+      "rule": {
+        "from_class": "GALAXY",
+        "to_class": "QSO",
+        "direction": "gt",
+        "threshold": 1.6,
+        "category_column": null,
+        "category_value": null,
+        "affected": 228
+      },
+      "balanced_accuracy": 0.9640974950449538,
+      "accuracy": 0.9649933229063284,
+      "confusion_matrix": [
+        [
+          364228,
+          4731,
+          8521
+        ],
+        [
+          2167,
+          113899,
+          1077
+        ],
+        [
+          3253,
+          462,
+          79009
+        ]
+      ]
+    },
+    {
+      "step": 2,
+      "rule": {
+        "from_class": "STAR",
+        "to_class": "GALAXY",
+        "direction": "gt",
+        "threshold": 0.28,
+        "category_column": "spectral_type",
+        "category_value": "M",
+        "affected": 10
+      },
+      "balanced_accuracy": 0.9641054424858778,
+      "accuracy": 0.9650089114518652,
+      "confusion_matrix": [
+        [
+          364237,
+          4731,
+          8512
+        ],
+        [
+          2168,
+          113899,
+          1076
+        ],
+        [
+          3253,
+          462,
+          79009
+        ]
+      ]
+    },
+    {
+      "step": 3,
+      "rule": {
+        "from_class": "GALAXY",
+        "to_class": "QSO",
+        "direction": "gt",
+        "threshold": 1.525,
+        "category_column": "spectral_type",
+        "category_value": "O/B",
+        "affected": 22
+      },
+      "balanced_accuracy": 0.9641084843888734,
+      "accuracy": 0.96500717939125,
+      "confusion_matrix": [
+        [
+          364234,
+          4734,
+          8512
+        ],
+        [
+          2166,
+          113901,
+          1076
+        ],
+        [
+          3253,
+          462,
+          79009
+        ]
+      ]
+    }
+  ],
+  "delta_balanced_accuracy": 7.811150016612256e-05,
+  "delta_accuracy": -0.00013163660675463706,
+  "kaggle_api_submission_ref": 53387393,
+  "kaggle_api_submission_status": "COMPLETE",
+  "lb_public_score": 0.96463,
+  "cv_lb_gap": 0.0005215156111265425,
+  "submission_distribution": {
+    "GALAXY": 158685,
+    "QSO": 50909,
+    "STAR": 37841
+  },
+  "submission_checks": {
+    "columns_match_sample_submission": true,
+    "row_count_matches_sample_submission": true,
+    "id_matches_sample_submission": true,
+    "labels_are_valid_strings": true,
+    "no_missing_values": true,
+    "all_passed": true
+  },
+  "leakage_risk": "Medium: rules are selected on OOF labels and raw features, then applied to test.",
+  "overfitting_risk": "Medium-high: greedy rules may overfit OOF idiosyncrasies; LB confirmation is required."
+}

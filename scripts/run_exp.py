@@ -330,6 +330,15 @@ def run_exp002(exp_id: str) -> dict:
     )
 
 
+def run_exp004(exp_id: str) -> dict:
+    return run_lgbm_experiment(
+        exp_id=exp_id,
+        feature_mode="basic",
+        purpose="`exp001_baseline` 相当の LightGBM baseline を再実行し、今後の thresholding / ensemble 用に `test_proba.csv` を保存する。",
+        hypothesis="同一CV設定と basic features で `exp001_baseline` と同等の CV を再現し、保存した test probabilities により `exp003` の class multiplier を LB で検証できる。",
+    )
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Run a Stellar Class experiment.")
     parser.add_argument("exp_id", help="Experiment id, e.g. exp001_baseline")
@@ -339,8 +348,10 @@ def main() -> None:
         run_exp001(args.exp_id)
     elif args.exp_id == "exp002_advanced_features":
         run_exp002(args.exp_id)
+    elif args.exp_id == "exp004_lgbm_basic_proba":
+        run_exp004(args.exp_id)
     else:
-        raise ValueError("Implemented experiments: exp001_baseline, exp002_advanced_features")
+        raise ValueError("Implemented experiments: exp001_baseline, exp002_advanced_features, exp004_lgbm_basic_proba")
 
 
 if __name__ == "__main__":

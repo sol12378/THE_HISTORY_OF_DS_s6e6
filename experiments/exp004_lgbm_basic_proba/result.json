@@ -1,0 +1,14 @@
+{
+  "exp_id": "exp004_lgbm_basic_proba",
+  "created_at": "2026-06-05T18:08:58",
+  "status": "timeout",
+  "purpose": "Rerun the exp001-like LightGBM baseline and save test_proba.csv for thresholding and ensemble work.",
+  "official_metric": "balanced_accuracy",
+  "cv_balanced_accuracy": null,
+  "cv_accuracy": null,
+  "notes": "The run timed out after 20 minutes under current CPU contention. No result/oof/test_proba/submission artifacts were produced.",
+  "decision": "timeout",
+  "next_action": "Retry when CPU is available, or reduce folds/model capacity only for a diagnostic probability artifact.",
+  "leakage_risk": "No completed model artifact was produced.",
+  "overfitting_risk": "No score to evaluate."
+}

@@ -1,0 +1,24 @@
+exp_id: exp004_lgbm_basic_proba
+seed: 42
+
+base: src/stellar_class/config/default.yaml
+
+features:
+  sets:
+    - basic
+
+model:
+  name: lightgbm_basic_proba
+  params:
+    objective: multiclass
+    metric: multi_logloss
+    learning_rate: 0.05
+    n_estimators: 2000
+    num_leaves: 63
+    class_weight: balanced
+
+output:
+  save_oof: true
+  save_test_proba: true
+  save_submission: true
+  save_feature_importance: true
