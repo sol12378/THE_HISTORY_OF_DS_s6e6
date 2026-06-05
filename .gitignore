@@ -8,8 +8,12 @@ __pycache__/
 *.py[cod]
 .ipynb_checkpoints/
 docs/*
+kaggle_notebooks/external/*
+!kaggle_notebooks/external/.gitkeep
 
 data/raw/*
+data/external/*
+data/external/**
 data/interim/*
 data/processed/*
 data/cache/*

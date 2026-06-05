@@ -16,6 +16,6 @@
 
 ## Current Focus
 
-- Best submitted LB is `exp006_rule_postprocess` at 0.96463.
+- Best submitted LB is `exp008_nina_weighted_vote` at 0.97074.
 - Best diagnostic CV is `exp003_oof_threshold_search` at 0.964788.
-- Next fast experiments: save test probabilities, split advanced features into smaller groups, and validate threshold/post-processing against LB.
+- Next fast experiments: keep public-blend submissions separate from model CV, then work on CatBoost/XGBoost/model stacking or external source-data validation.
