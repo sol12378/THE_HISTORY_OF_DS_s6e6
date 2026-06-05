@@ -5,7 +5,7 @@
 | Type | Experiment | CV | LB | Notes |
 |---|---|---:|---:|---|
 | Baseline | exp001_baseline | 0.964030 | 0.96462 | LightGBM + color indices, official balanced accuracy |
-| Best CV | exp017_lgbm_xgboost_blend | 0.965235 | 0.96597 | LightGBM + GPU XGBoost OOF blend with class multipliers |
+| Best CV | exp018_oof_logistic_stacker | 0.965560 | 0.96641 | Logistic OOF stacker over LightGBM, CatBoost, and GPU XGBoost |
 | Best LB | exp008_nina_weighted_vote | | 0.97074 | External public submission weighted vote; high leakage/overfitting risk |
 
 ## Experiments
@@ -28,3 +28,4 @@
 | exp015_sdss17_source_match | 2026-06-05 | Check whether public SDSS17 data can directly match official train/test rows. | | | diagnostic_completed | Rounded exact matches were essentially zero; sampled nearest-neighbor label balanced accuracy only ~0.81, so direct label transfer is rejected for now |
 | exp016_xgboost_gpu_basic | 2026-06-05 | Train GPU XGBoost diagnostic for model diversity. | 0.964020 | | completed | Strong enough to use as blend candidate, but below best thresholded LightGBM standalone |
 | exp017_lgbm_xgboost_blend | 2026-06-05 | Blend exp009 LightGBM and exp016 GPU XGBoost OOF/test probabilities. | 0.965235 | 0.96597 | submitted | New best self-model CV and LB; XGBoost adds useful diversity |
+| exp018_oof_logistic_stacker | 2026-06-05 | Train a nested-CV logistic OOF stacker over available self-model probabilities. | 0.965560 | 0.96641 | submitted | New best self-model CV and LB; stacker improves over fixed two-model blend |

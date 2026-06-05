@@ -18,6 +18,7 @@
 | [[exp015_sdss17_source_match]] | 2026-06-05 | diagnostic_completed | | | SDSS17 direct matching rejected for now |
 | [[exp016_xgboost_gpu_basic]] | 2026-06-05 | completed | 0.964020 | | GPU XGBoost is useful as a diversity candidate |
 | [[exp017_lgbm_xgboost_blend]] | 2026-06-05 | submitted | 0.965235 | 0.96597 | New best self-model CV and LB |
+| [[exp018_oof_logistic_stacker]] | 2026-06-05 | submitted | 0.965560 | 0.96641 | New best self-model CV and LB |
 
 | Exp | Status | CV | LB | Decision |
 |---|---|---:|---:|---|

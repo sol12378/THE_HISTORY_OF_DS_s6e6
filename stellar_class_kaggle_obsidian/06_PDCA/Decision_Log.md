@@ -11,3 +11,4 @@
 | 2026-06-05 | Keep GPU CatBoost as diagnostic, not current ensemble member | `exp010` GPU CatBoost was fast but low CV, and `exp014` optimized CatBoost blend weight to 0 | GPU is useful, but current CatBoost setup does not improve self-model CV |
 | 2026-06-05 | Reject direct SDSS17 label transfer for now | `exp015` found essentially no rounded matches and only about 0.81 sampled nearest-neighbor label balanced_accuracy | External SDSS17 should be treated as auxiliary data, not a direct answer key |
 | 2026-06-05 | Keep GPU XGBoost as an ensemble member | `exp016` standalone CV was 0.964020 and `exp017` blend improved CV to 0.965235 and LB to 0.96597 | XGBoost adds useful model diversity for self-model stack/blend |
+| 2026-06-05 | Move self-model development toward OOF stacking | `exp018` improved CV to 0.965560 and LB to 0.96641 | Add more diverse base OOF/test probability models and restack |
