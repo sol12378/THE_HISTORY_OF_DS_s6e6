@@ -1,0 +1,105 @@
+{
+  "exp_id": "exp001_baseline",
+  "created_at": "2026-06-05T15:41:21",
+  "purpose": "Establish a reproducible LightGBM baseline and first valid submission for balanced accuracy.",
+  "official_metric": "balanced_accuracy",
+  "cv_balanced_accuracy": 0.9640303728887073,
+  "cv_accuracy": 0.9651388159980047,
+  "fold_results": [
+    {
+      "fold": 1,
+      "best_iteration": 1725,
+      "balanced_accuracy": 0.9640273975807484,
+      "accuracy": 0.9661124101498224
+    },
+    {
+      "fold": 2,
+      "best_iteration": 1536,
+      "balanced_accuracy": 0.9646262761603456,
+      "accuracy": 0.9650125573742098
+    },
+    {
+      "fold": 3,
+      "best_iteration": 1610,
+      "balanced_accuracy": 0.9638295775667043,
+      "accuracy": 0.9644753137205657
+    },
+    {
+      "fold": 4,
+      "best_iteration": 1686,
+      "balanced_accuracy": 0.9635408505750119,
+      "accuracy": 0.9653586676943595
+    },
+    {
+      "fold": 5,
+      "best_iteration": 1632,
+      "balanced_accuracy": 0.9641277688701226,
+      "accuracy": 0.964735123712858
+    }
+  ],
+  "classes": [
+    "GALAXY",
+    "QSO",
+    "STAR"
+  ],
+  "features": [
+    "alpha",
+    "delta",
+    "u",
+    "g",
+    "r",
+    "i",
+    "z",
+    "redshift",
+    "spectral_type",
+    "galaxy_population",
+    "u_g",
+    "g_r",
+    "r_i",
+    "i_z",
+    "u_r",
+    "g_i"
+  ],
+  "categorical_features": [
+    "spectral_type",
+    "galaxy_population"
+  ],
+  "train_shape": [
+    577347,
+    18
+  ],
+  "test_shape": [
+    247435,
+    17
+  ],
+  "sample_submission_shape": [
+    247435,
+    2
+  ],
+  "kaggle_submission_ref": 53383739,
+  "kaggle_submission_status": "COMPLETE",
+  "lb_public_score": 0.96462,
+  "cv_lb_gap": 0.0005896271112926594,
+  "target_distribution": {
+    "GALAXY": 377480,
+    "QSO": 117143,
+    "STAR": 82724
+  },
+  "missing_train_total": 0,
+  "missing_test_total": 0,
+  "submission_distribution": {
+    "GALAXY": 158747,
+    "QSO": 50846,
+    "STAR": 37842
+  },
+  "submission_checks": {
+    "columns_match_sample_submission": true,
+    "row_count_matches_test": true,
+    "id_matches_sample_submission": true,
+    "labels_are_valid_strings": true,
+    "no_missing_values": true,
+    "all_passed": true
+  },
+  "leakage_risk": "Low to medium: ID-like columns are included as baseline inputs; no target-derived encoding or test-label leakage is used.",
+  "overfitting_risk": "Medium: LightGBM with 2000 estimators uses early stopping; CV/LB gap must be monitored after submission."
+}
