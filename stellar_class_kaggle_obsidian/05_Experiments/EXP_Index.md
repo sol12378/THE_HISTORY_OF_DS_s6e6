@@ -21,6 +21,8 @@
 | [[exp018_oof_logistic_stacker]] | 2026-06-05 | submitted | 0.965560 | 0.96641 | New best self-model CV and LB |
 | [[exp019_xgboost_gpu_deep]] | 2026-06-05 | completed | 0.962960 | | Weak standalone, useful stack diversity candidate |
 | [[exp020_oof_stacker_with_xgb_deep]] | 2026-06-05 | submitted | 0.965901 | 0.96642 | New best self-model CV, tiny LB gain |
+| [[exp021_xgboost_gpu_shallow]] | 2026-06-05 | completed | 0.964128 | | Shallow XGBoost diversity candidate |
+| [[exp022_oof_stacker_with_xgb_shallow]] | 2026-06-05 | no_submit | 0.965864 | | Below exp020, not submitted |
 
 | Exp | Status | CV | LB | Decision |
 |---|---|---:|---:|---|

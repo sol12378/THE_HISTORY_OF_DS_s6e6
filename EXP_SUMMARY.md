@@ -31,3 +31,5 @@
 | exp018_oof_logistic_stacker | 2026-06-05 | Train a nested-CV logistic OOF stacker over available self-model probabilities. | 0.965560 | 0.96641 | submitted | New best self-model CV and LB; stacker improves over fixed two-model blend |
 | exp019_xgboost_gpu_deep | 2026-06-05 | Train a deeper/longer GPU XGBoost diagnostic for stack diversity. | 0.962960 | | completed | Weak standalone balanced accuracy but useful as an additional stack base |
 | exp020_oof_stacker_with_xgb_deep | 2026-06-05 | Add exp019 deep GPU XGBoost to the logistic OOF stacker. | 0.965901 | 0.96642 | submitted | New best self-model CV; LB only slightly improved, so future submissions need strong raw-CV gains |
+| exp021_xgboost_gpu_shallow | 2026-06-05 | Train a shallow/regularized GPU XGBoost diagnostic for stack diversity. | 0.964128 | | completed | Stronger standalone than exp019, but only useful if stack improves |
+| exp022_oof_stacker_with_xgb_shallow | 2026-06-05 | Add exp021 shallow GPU XGBoost to the exp020 stack. | 0.965864 | | no_submit | Below exp020 CV, so no API submission under confident-CV-only rule |
