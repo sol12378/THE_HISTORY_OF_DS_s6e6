@@ -17,3 +17,4 @@
 | 2026-06-05 | Do not submit `exp022` | CV 0.965864 was below current best `exp020` CV 0.965901 | Confident-CV-only API submission rule prevented a low-confidence submission |
 | 2026-06-05 | Treat `exp024` as current best CV but not confirmed LB | CV improved to 0.966112, but Kaggle API returned 400 and submission history did not register it | Keep `exp020` as best confirmed self-model LB; retry `exp024` only after submission limit resets |
 | 2026-06-05 | Do not submit `exp026` | CV 0.966092 was below `exp024` CV 0.966112 | Adding the weak regularized LightGBM did not improve the current best stack |
+| 2026-06-06 | Do not submit `exp028` | Pure PyTorch logit stacker CV 0.965935 was below `exp024` CV 0.966112 | Keep pure PyTorch stacker as a reusable tool, but prioritize adding stronger base models |

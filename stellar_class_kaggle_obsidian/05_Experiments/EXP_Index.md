@@ -27,6 +27,7 @@
 | [[exp024_oof_stacker_with_lgbm_basic]] | 2026-06-05 | api_failed | 0.966112 | | New best CV; submission failed likely due daily limit |
 | [[exp025_lgbm_color_regularized]] | 2026-06-05 | completed | 0.962930 | | Regularized LightGBM diversity base |
 | [[exp026_oof_stacker_with_two_lgbm]] | 2026-06-05 | no_submit | 0.966092 | | Below exp024, not submitted |
+| [[exp028_torch_logit_stacker]] | 2026-06-06 | no_submit | 0.965935 | | Pure PyTorch logit stacker; below exp024 |
 
 | Exp | Status | CV | LB | Decision |
 |---|---|---:|---:|---|

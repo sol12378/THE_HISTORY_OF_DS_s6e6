@@ -37,3 +37,4 @@
 | exp024_oof_stacker_with_lgbm_basic | 2026-06-05 | Add exp023 basic LightGBM to the exp020 stack. | 0.966112 | | api_failed | New best CV; API submission failed with 400 likely due daily submission limit |
 | exp025_lgbm_color_regularized | 2026-06-05 | Train a regularized stochastic color/redshift LightGBM base. | 0.962930 | | completed | Weak standalone; tested only as stack diversity |
 | exp026_oof_stacker_with_two_lgbm | 2026-06-05 | Add both exp023 and exp025 LightGBM bases to the stack. | 0.966092 | | no_submit | Below exp024; no API submission |
+| exp028_torch_logit_stacker | 2026-06-06 | Run a pure PyTorch CDeotte-style logit multi-seed stacker. | 0.965935 | | no_submit | Pure PyTorch implementation completed; below exp024 CV, so no API submission |
