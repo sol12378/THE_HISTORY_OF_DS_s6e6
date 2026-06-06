@@ -42,3 +42,5 @@
 | exp030_oof_stacker_with_cat_v3 | 2026-06-06 | Add exp029 CatBoost v3-style base to the exp024 stack. | 0.966222 | | no_submit | New best CV, but only +0.000110 over exp024 so API submission withheld |
 | exp031_lgbm_sdss_prior_fast | 2026-06-06 | Train a LightGBM base with SDSS17 aggregate prior/prototype/count features. | 0.959431 | | completed | Standalone weak; aggregate external features did not improve LightGBM directly |
 | exp032_oof_stacker_with_sdss_prior | 2026-06-06 | Add exp031 SDSS prior LightGBM base to the exp030 stack. | 0.966223 | | no_submit | Only +0.000001 over exp030 and relies on multiplier search, so API submission withheld |
+| exp033_lgbm_sdss_stable | 2026-06-06 | Train a LightGBM base with only stable SDSS17 prior/prototype features. | 0.963558 | | completed | Much healthier than exp031 but still below strong LightGBM/XGB bases |
+| exp034_oof_stacker_with_sdss_stable | 2026-06-06 | Add exp033 stable SDSS LightGBM base to the exp030 stack. | 0.966206 | | no_submit | Below exp032/exp030; stable SDSS base does not add useful stack diversity |

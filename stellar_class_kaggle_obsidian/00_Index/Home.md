@@ -21,5 +21,5 @@
 - Best self-model submitted LB is `exp020_oof_stacker_with_xgb_deep` at 0.96642.
 - `exp032` is the best CV candidate, but not submitted because the gain over `exp030` is only +0.000001 and depends on multiplier search.
 - External SDSS17 direct label transfer is not supported by `exp015`; use it only as possible auxiliary training data after validation.
-- Next fast experiments: fix SDSS prior feature weakness, LightGBM 5-fold/proba rerun after resources allow, pure PyTorch tabular base, or safer LB blend search after submission limit resets.
+- Next fast experiments: pure PyTorch tabular base, stronger XGBoost/CatBoost variants, LightGBM 5-fold/proba rerun after resources allow, or safer LB blend search after submission limit resets.
 - Research note: [[Winning_Strategy_Research_2026-06-06]]

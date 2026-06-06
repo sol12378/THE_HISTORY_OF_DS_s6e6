@@ -32,6 +32,8 @@
 | [[exp030_oof_stacker_with_cat_v3]] | 2026-06-06 | no_submit | 0.966222 | | New best CV, but gain too small for API submission |
 | [[exp031_lgbm_sdss_prior_fast]] | 2026-06-06 | completed | 0.959431 | | SDSS17 aggregate prior/prototype/count LightGBM; weak standalone |
 | [[exp032_oof_stacker_with_sdss_prior]] | 2026-06-06 | no_submit | 0.966223 | | Effectively tied with exp030; no confident API submission |
+| [[exp033_lgbm_sdss_stable]] | 2026-06-06 | completed | 0.963558 | | Stable SDSS prior/prototype LightGBM; healthier but not strong |
+| [[exp034_oof_stacker_with_sdss_stable]] | 2026-06-06 | no_submit | 0.966206 | | Below exp030/032, no API submission |
 
 | Exp | Status | CV | LB | Decision |
 |---|---|---:|---:|---|

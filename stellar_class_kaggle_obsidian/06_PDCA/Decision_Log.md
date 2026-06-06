@@ -21,3 +21,4 @@
 | 2026-06-06 | Do not submit `exp030` yet | CV improved to 0.966222, but the gain over `exp024` was only +0.000110 | Keep as current best CV and require a larger confidence margin before API submission |
 | 2026-06-06 | Do not submit `exp032` | CV improved from `exp030` 0.966221799 to 0.966222902, only about +0.000001 and with multiplier search | Treat as an effective tie; redesign SDSS prior/prototype features before using API submissions |
 | 2026-06-06 | Require pure PyTorch for torch experiments | User explicitly requested pure PyTorch | Avoid high-level torch wrappers and third-party tabular NN packages unless explicitly approved |
+| 2026-06-06 | Do not submit `exp034` | Stable SDSS stack CV 0.966206 was below `exp030`/`exp032` | Deprioritize SDSS aggregate features and move to pure PyTorch tabular or stronger GPU tree variants |
