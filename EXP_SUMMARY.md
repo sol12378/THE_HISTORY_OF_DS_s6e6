@@ -5,7 +5,7 @@
 | Type | Experiment | CV | LB | Notes |
 |---|---|---:|---:|---|
 | Baseline | exp001_baseline | 0.964030 | 0.96462 | LightGBM + color indices, official balanced accuracy |
-| Best CV | exp038_oof_stacker_with_mlp_and_sdss | 0.966420 | | Logistic OOF stacker with pure PyTorch MLP and SDSS bases; no_submit pending stronger confidence |
+| Best CV | exp047_exp038_star105_candidate | 0.966420 | 0.96679 | Logistic OOF stacker with pure PyTorch MLP and SDSS bases; submitted self-model best LB |
 | Best LB | exp008_nina_weighted_vote | | 0.97074 | External public submission weighted vote; high leakage/overfitting risk |
 
 ## Experiments
@@ -56,4 +56,4 @@
 | exp044_seed_average_stacker | 2026-06-06 | Average exp038/042/043 stacker seed probabilities. | 0.966383 | | no_submit | Reduces seed arbitrariness but below exp038/042, so not the best CV submission candidate |
 | exp045_exp038_raw_candidate | 2026-06-06 | Apply no class multipliers to exp038 probabilities. | 0.966344 | | no_submit | Raw exp038 remains above exp030/032 and supports the base set |
 | exp046_exp038_star1025_candidate | 2026-06-06 | Apply mild STAR multiplier 1.025 to exp038 probabilities. | 0.966404 | | no_submit | Nearly reaches exp038 best with a milder multiplier; useful lower-overfit candidate |
-| exp047_exp038_star105_candidate | 2026-06-06 | Apply fixed STAR multiplier 1.05 to exp038 probabilities. | 0.966420 | | no_submit | Matches exp038 best CV; strongest self-model candidate but API submission still withheld pending submission-limit/confidence review |
+| exp047_exp038_star105_candidate | 2026-06-06 | Apply fixed STAR multiplier 1.05 to exp038 probabilities. | 0.966420 | 0.96679 | submitted | New best self-model LB; CV/LB gap +0.000370, still far below external public blend |

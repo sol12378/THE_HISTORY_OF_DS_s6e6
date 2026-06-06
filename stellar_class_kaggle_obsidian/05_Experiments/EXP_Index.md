@@ -46,7 +46,7 @@
 | [[exp044_seed_average_stacker]] | 2026-06-06 | no_submit | 0.966383 | | Seed-average candidate below exp038/042 |
 | [[exp045_exp038_raw_candidate]] | 2026-06-06 | no_submit | 0.966344 | | Raw exp038 candidate |
 | [[exp046_exp038_star1025_candidate]] | 2026-06-06 | no_submit | 0.966404 | | Mild STAR multiplier candidate |
-| [[exp047_exp038_star105_candidate]] | 2026-06-06 | no_submit | 0.966420 | | Fixed best STAR multiplier candidate |
+| [[exp047_exp038_star105_candidate]] | 2026-06-06 | submitted | 0.966420 | 0.96679 | New best self-model LB |
 
 | Exp | Status | CV | LB | Decision |
 |---|---|---:|---:|---|

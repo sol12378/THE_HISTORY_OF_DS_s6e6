@@ -12,3 +12,4 @@
 | 2026-06-05 | 53391073 | exp017_lgbm_xgboost_blend | 0.965235 | 0.96597 | +0.000735 | New best self-model LB; XGBoost adds useful diversity |
 | 2026-06-05 | 53391289 | exp018_oof_logistic_stacker | 0.965560 | 0.96641 | +0.000850 | New best self-model LB; logistic stacker over LightGBM/CatBoost/XGBoost |
 | 2026-06-05 | 53391536 | exp020_oof_stacker_with_xgb_deep | 0.965901 | 0.96642 | +0.000519 | New best self-model CV/LB; raw stacker gain but tiny LB improvement |
+| 2026-06-06 | 53410199 | exp047_exp038_star105_candidate | 0.966420 | 0.96679 | +0.000370 | New best self-model LB. Confidence basis before submit: exp038 base set confirmed by exp042 0.966398, exp043 0.966354, exp039 pure PyTorch logit 0.966322; exp045 raw 0.966344 and exp046 mild STAR 1.025 0.966404 support that STAR 1.05 is not the only signal. Risk: medium overfit from stacker/multiplier; no external public submission leakage. |
