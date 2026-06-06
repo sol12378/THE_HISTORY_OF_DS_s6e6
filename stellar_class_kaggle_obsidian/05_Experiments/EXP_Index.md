@@ -41,6 +41,8 @@
 | [[exp039_torch_logit_stacker_with_mlp_and_sdss]] | 2026-06-06 | no_submit | 0.966322 | | Pure PyTorch confirmation supports modest gain |
 | [[exp040_oof_stacker_with_mlp_and_sdss_prior]] | 2026-06-06 | no_submit | 0.966407 | | MLP + exp031, below exp038 |
 | [[exp041_oof_stacker_with_mlp_and_sdss_stable]] | 2026-06-06 | no_submit | 0.966379 | | MLP + exp033, below exp038 |
+| [[exp042_oof_stacker_mlp_sdss_seed777]] | 2026-06-06 | no_submit | 0.966398 | | Alternate meta split confirms exp038 base set |
+| [[exp043_oof_stacker_mlp_sdss_seed31415]] | 2026-06-06 | no_submit | 0.966354 | | Alternate meta split confirms exp038 base set |
 
 | Exp | Status | CV | LB | Decision |
 |---|---|---:|---:|---|

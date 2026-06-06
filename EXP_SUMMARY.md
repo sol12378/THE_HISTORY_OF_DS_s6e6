@@ -51,3 +51,5 @@
 | exp039_torch_logit_stacker_with_mlp_and_sdss | 2026-06-06 | Confirm exp038 base set with pure PyTorch logit stacker. | 0.966322 | | no_submit | Confirms some gain over exp030/032, but not enough to make exp038 an API candidate yet |
 | exp040_oof_stacker_with_mlp_and_sdss_prior | 2026-06-06 | Add exp031 and exp035 to the exp030 stack. | 0.966407 | | no_submit | Slightly below exp038; exp031 contributes with MLP but both SDSS bases together are best |
 | exp041_oof_stacker_with_mlp_and_sdss_stable | 2026-06-06 | Add exp033 and exp035 to the exp030 stack. | 0.966379 | | no_submit | Strong raw CV but below exp038/040 |
+| exp042_oof_stacker_mlp_sdss_seed777 | 2026-06-06 | Re-evaluate exp038 base set with meta fold seed 777. | 0.966398 | | no_submit | Confirms exp038 base set is not only seed-2026 luck; raw threshold-free CV is also strong |
+| exp043_oof_stacker_mlp_sdss_seed31415 | 2026-06-06 | Re-evaluate exp038 base set with meta fold seed 31415. | 0.966354 | | no_submit | Still above exp030/032, but below exp038/042; next step is seed-averaged submission candidate |

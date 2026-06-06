@@ -88,7 +88,7 @@ def search_multipliers(y_idx: np.ndarray, proba: np.ndarray) -> dict:
     return best
 
 
-def run_stack(exp_id: str, base_exp_ids: list[str]) -> dict:
+def run_stack(exp_id: str, base_exp_ids: list[str], n_folds: int = 5, fold_seed: int = 2026) -> dict:
     exp_dir = Path("experiments") / exp_id
     exp_dir.mkdir(parents=True, exist_ok=True)
     train_x, test_x = make_stack_features(base_exp_ids)
@@ -100,7 +100,7 @@ def run_stack(exp_id: str, base_exp_ids: list[str]) -> dict:
     x_test = test_x[feature_cols].to_numpy(dtype=np.float64)
 
     c_grid = [0.01, 0.03, 0.1, 0.3, 1.0, 3.0, 10.0]
-    skf = StratifiedKFold(n_splits=5, shuffle=True, random_state=2026)
+    skf = StratifiedKFold(n_splits=n_folds, shuffle=True, random_state=fold_seed)
     candidates = []
     for c_value in c_grid:
         oof_proba = np.zeros((len(train_x), len(CLASSES)), dtype=np.float32)
@@ -190,6 +190,8 @@ def run_stack(exp_id: str, base_exp_ids: list[str]) -> dict:
         "official_metric": "balanced_accuracy",
         "base_exp_ids": base_exp_ids,
         "feature_count": len(feature_cols),
+        "n_folds": n_folds,
+        "fold_seed": fold_seed,
         "best_C": best_c,
         "raw_cv_balanced_accuracy": best["raw"]["balanced_accuracy"],
         "cv_balanced_accuracy": best["best_threshold"]["balanced_accuracy"],
@@ -252,8 +254,10 @@ def main() -> None:
         required=True,
         help="Base experiment id with both oof.csv and test_proba.csv. Repeat this option.",
     )
+    parser.add_argument("--n-folds", type=int, default=5)
+    parser.add_argument("--fold-seed", type=int, default=2026)
     args = parser.parse_args()
-    run_stack(args.exp_id, args.base_exp)
+    run_stack(args.exp_id, args.base_exp, n_folds=args.n_folds, fold_seed=args.fold_seed)
 
 
 if __name__ == "__main__":
