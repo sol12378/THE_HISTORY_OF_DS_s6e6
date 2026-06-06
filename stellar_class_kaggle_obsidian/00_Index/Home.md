@@ -22,3 +22,4 @@
 - `exp024` is the best CV candidate, but API submission failed with `400 Bad Request`, likely because the 2026-06-05 daily submission limit was reached.
 - External SDSS17 direct label transfer is not supported by `exp015`; use it only as possible auxiliary training data after validation.
 - Next fast experiments: LightGBM 5-fold/proba rerun after resources allow, external SDSS17 auxiliary-training test, or safer LB blend search after submission limit resets.
+- Research note: [[Winning_Strategy_Research_2026-06-06]]
