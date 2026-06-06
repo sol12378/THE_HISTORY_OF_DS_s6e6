@@ -54,3 +54,6 @@
 | exp042_oof_stacker_mlp_sdss_seed777 | 2026-06-06 | Re-evaluate exp038 base set with meta fold seed 777. | 0.966398 | | no_submit | Confirms exp038 base set is not only seed-2026 luck; raw threshold-free CV is also strong |
 | exp043_oof_stacker_mlp_sdss_seed31415 | 2026-06-06 | Re-evaluate exp038 base set with meta fold seed 31415. | 0.966354 | | no_submit | Still above exp030/032, but below exp038/042; next step is seed-averaged submission candidate |
 | exp044_seed_average_stacker | 2026-06-06 | Average exp038/042/043 stacker seed probabilities. | 0.966383 | | no_submit | Reduces seed arbitrariness but below exp038/042, so not the best CV submission candidate |
+| exp045_exp038_raw_candidate | 2026-06-06 | Apply no class multipliers to exp038 probabilities. | 0.966344 | | no_submit | Raw exp038 remains above exp030/032 and supports the base set |
+| exp046_exp038_star1025_candidate | 2026-06-06 | Apply mild STAR multiplier 1.025 to exp038 probabilities. | 0.966404 | | no_submit | Nearly reaches exp038 best with a milder multiplier; useful lower-overfit candidate |
+| exp047_exp038_star105_candidate | 2026-06-06 | Apply fixed STAR multiplier 1.05 to exp038 probabilities. | 0.966420 | | no_submit | Matches exp038 best CV; strongest self-model candidate but API submission still withheld pending submission-limit/confidence review |

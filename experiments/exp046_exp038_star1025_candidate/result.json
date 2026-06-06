@@ -1,0 +1,29 @@
+{
+  "exp_id": "exp046_exp038_star1025_candidate",
+  "created_at": "2026-06-06T13:50:45",
+  "purpose": "Apply fixed class multipliers to an existing OOF/test probability experiment.",
+  "source_exp": "exp038_oof_stacker_with_mlp_and_sdss",
+  "official_metric": "balanced_accuracy",
+  "multipliers": {
+    "GALAXY": 1.0,
+    "QSO": 1.0,
+    "STAR": 1.025
+  },
+  "cv_balanced_accuracy": 0.9664041474666524,
+  "cv_accuracy": 0.9603929699123751,
+  "submission_distribution": {
+    "GALAXY": 155961,
+    "QSO": 51512,
+    "STAR": 39962
+  },
+  "submission_checks": {
+    "columns_match_sample_submission": true,
+    "row_count_matches_sample_submission": true,
+    "id_matches_sample_submission": true,
+    "labels_are_valid_strings": true,
+    "no_missing_values": true,
+    "all_passed": true
+  },
+  "leakage_risk": "Medium-low: no model refit; fixed multipliers are evaluated on OOF labels.",
+  "overfitting_risk": "Medium: class multipliers can overfit OOF label distribution."
+}
