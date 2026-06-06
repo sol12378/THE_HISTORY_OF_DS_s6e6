@@ -23,3 +23,4 @@
 | 2026-06-06 | Require pure PyTorch for torch experiments | User explicitly requested pure PyTorch | Avoid high-level torch wrappers and third-party tabular NN packages unless explicitly approved |
 | 2026-06-06 | Do not submit `exp034` | Stable SDSS stack CV 0.966206 was below `exp030`/`exp032` | Deprioritize SDSS aggregate features and move to pure PyTorch tabular or stronger GPU tree variants |
 | 2026-06-06 | Do not submit `exp036` yet | CV 0.966349 is a new diagnostic best, but pure PyTorch confirmation `exp037` was only 0.966175 | Keep the MLP base as a diversity signal, but require stronger confirmation before API submission |
+| 2026-06-06 | Do not submit `exp038` yet | CV 0.966420 is a new diagnostic best and `exp039` confirms a smaller gain, but the margin is still modest and stacker/multiplier dependent | Keep `exp038` as best candidate; verify with another meta-stack split or calibration before API submission |

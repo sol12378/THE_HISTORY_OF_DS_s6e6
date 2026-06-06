@@ -5,7 +5,7 @@
 | Type | Experiment | CV | LB | Notes |
 |---|---|---:|---:|---|
 | Baseline | exp001_baseline | 0.964030 | 0.96462 | LightGBM + color indices, official balanced accuracy |
-| Best CV | exp036_oof_stacker_with_torch_mlp | 0.966349 | | Logistic OOF stacker with pure PyTorch MLP base; no_submit because confirmation stack did not support the gain |
+| Best CV | exp038_oof_stacker_with_mlp_and_sdss | 0.966420 | | Logistic OOF stacker with pure PyTorch MLP and SDSS bases; no_submit pending stronger confidence |
 | Best LB | exp008_nina_weighted_vote | | 0.97074 | External public submission weighted vote; high leakage/overfitting risk |
 
 ## Experiments
@@ -47,3 +47,7 @@
 | exp035_torch_tabular_mlp | 2026-06-06 | Train a pure PyTorch tabular MLP base for stack diversity. | 0.950964 | | completed | Weak standalone but provides neural-network diversity for stack diagnostics |
 | exp036_oof_stacker_with_torch_mlp | 2026-06-06 | Add exp035 pure PyTorch MLP base to the exp030 stack. | 0.966349 | | no_submit | New diagnostic best, but gain depends on sklearn stacker threshold search and pure PyTorch confirmation did not reproduce it |
 | exp037_torch_logit_stacker_with_mlp | 2026-06-06 | Confirm exp035 MLP base with pure PyTorch logit stacker. | 0.966175 | | no_submit | Below exp030/032, so exp036 is not confident enough for API submission |
+| exp038_oof_stacker_with_mlp_and_sdss | 2026-06-06 | Add exp031, exp033, and exp035 weak/diverse bases to the exp030 stack. | 0.966420 | | no_submit | New diagnostic best; pure PyTorch confirmation improved over exp030 but CV margin is still modest |
+| exp039_torch_logit_stacker_with_mlp_and_sdss | 2026-06-06 | Confirm exp038 base set with pure PyTorch logit stacker. | 0.966322 | | no_submit | Confirms some gain over exp030/032, but not enough to make exp038 an API candidate yet |
+| exp040_oof_stacker_with_mlp_and_sdss_prior | 2026-06-06 | Add exp031 and exp035 to the exp030 stack. | 0.966407 | | no_submit | Slightly below exp038; exp031 contributes with MLP but both SDSS bases together are best |
+| exp041_oof_stacker_with_mlp_and_sdss_stable | 2026-06-06 | Add exp033 and exp035 to the exp030 stack. | 0.966379 | | no_submit | Strong raw CV but below exp038/040 |

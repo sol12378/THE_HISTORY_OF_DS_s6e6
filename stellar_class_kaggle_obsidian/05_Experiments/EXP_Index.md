@@ -37,6 +37,10 @@
 | [[exp035_torch_tabular_mlp]] | 2026-06-06 | completed | 0.950964 | | Pure PyTorch MLP; weak standalone but useful diversity diagnostic |
 | [[exp036_oof_stacker_with_torch_mlp]] | 2026-06-06 | no_submit | 0.966349 | | New diagnostic best but not confirmed by pure PyTorch stacker |
 | [[exp037_torch_logit_stacker_with_mlp]] | 2026-06-06 | no_submit | 0.966175 | | Pure PyTorch confirmation below exp030/032 |
+| [[exp038_oof_stacker_with_mlp_and_sdss]] | 2026-06-06 | no_submit | 0.966420 | | New diagnostic best with MLP + SDSS weak bases |
+| [[exp039_torch_logit_stacker_with_mlp_and_sdss]] | 2026-06-06 | no_submit | 0.966322 | | Pure PyTorch confirmation supports modest gain |
+| [[exp040_oof_stacker_with_mlp_and_sdss_prior]] | 2026-06-06 | no_submit | 0.966407 | | MLP + exp031, below exp038 |
+| [[exp041_oof_stacker_with_mlp_and_sdss_stable]] | 2026-06-06 | no_submit | 0.966379 | | MLP + exp033, below exp038 |
 
 | Exp | Status | CV | LB | Decision |
 |---|---|---:|---:|---|
