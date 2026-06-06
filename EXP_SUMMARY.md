@@ -5,7 +5,7 @@
 | Type | Experiment | CV | LB | Notes |
 |---|---|---:|---:|---|
 | Baseline | exp001_baseline | 0.964030 | 0.96462 | LightGBM + color indices, official balanced accuracy |
-| Best CV | exp030_oof_stacker_with_cat_v3 | 0.966222 | | Logistic OOF stacker with CatBoost v3-style SDSS/categorical base; no_submit due small gain |
+| Best CV | exp032_oof_stacker_with_sdss_prior | 0.966223 | | Logistic OOF stacker with SDSS prior base; effectively tied with exp030 and no_submit due negligible gain |
 | Best LB | exp008_nina_weighted_vote | | 0.97074 | External public submission weighted vote; high leakage/overfitting risk |
 
 ## Experiments
@@ -40,3 +40,5 @@
 | exp028_torch_logit_stacker | 2026-06-06 | Run a pure PyTorch CDeotte-style logit multi-seed stacker. | 0.965935 | | no_submit | Pure PyTorch implementation completed; below exp024 CV, so no API submission |
 | exp029_catboost_v3_style | 2026-06-06 | Train a CatBoost v3-style native categorical model with low-weight SDSS17 original rows. | 0.964213 | | completed | Much stronger than prior CatBoost; useful stack diversity, not standalone |
 | exp030_oof_stacker_with_cat_v3 | 2026-06-06 | Add exp029 CatBoost v3-style base to the exp024 stack. | 0.966222 | | no_submit | New best CV, but only +0.000110 over exp024 so API submission withheld |
+| exp031_lgbm_sdss_prior_fast | 2026-06-06 | Train a LightGBM base with SDSS17 aggregate prior/prototype/count features. | 0.959431 | | completed | Standalone weak; aggregate external features did not improve LightGBM directly |
+| exp032_oof_stacker_with_sdss_prior | 2026-06-06 | Add exp031 SDSS prior LightGBM base to the exp030 stack. | 0.966223 | | no_submit | Only +0.000001 over exp030 and relies on multiplier search, so API submission withheld |

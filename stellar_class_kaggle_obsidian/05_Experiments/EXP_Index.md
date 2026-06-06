@@ -30,6 +30,8 @@
 | [[exp028_torch_logit_stacker]] | 2026-06-06 | no_submit | 0.965935 | | Pure PyTorch logit stacker; below exp024 |
 | [[exp029_catboost_v3_style]] | 2026-06-06 | completed | 0.964213 | | CatBoost v3-style base with SDSS original low-weight append |
 | [[exp030_oof_stacker_with_cat_v3]] | 2026-06-06 | no_submit | 0.966222 | | New best CV, but gain too small for API submission |
+| [[exp031_lgbm_sdss_prior_fast]] | 2026-06-06 | completed | 0.959431 | | SDSS17 aggregate prior/prototype/count LightGBM; weak standalone |
+| [[exp032_oof_stacker_with_sdss_prior]] | 2026-06-06 | no_submit | 0.966223 | | Effectively tied with exp030; no confident API submission |
 
 | Exp | Status | CV | LB | Decision |
 |---|---|---:|---:|---|

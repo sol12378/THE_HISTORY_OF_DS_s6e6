@@ -19,3 +19,5 @@
 | 2026-06-05 | Do not submit `exp026` | CV 0.966092 was below `exp024` CV 0.966112 | Adding the weak regularized LightGBM did not improve the current best stack |
 | 2026-06-06 | Do not submit `exp028` | Pure PyTorch logit stacker CV 0.965935 was below `exp024` CV 0.966112 | Keep pure PyTorch stacker as a reusable tool, but prioritize adding stronger base models |
 | 2026-06-06 | Do not submit `exp030` yet | CV improved to 0.966222, but the gain over `exp024` was only +0.000110 | Keep as current best CV and require a larger confidence margin before API submission |
+| 2026-06-06 | Do not submit `exp032` | CV improved from `exp030` 0.966221799 to 0.966222902, only about +0.000001 and with multiplier search | Treat as an effective tie; redesign SDSS prior/prototype features before using API submissions |
+| 2026-06-06 | Require pure PyTorch for torch experiments | User explicitly requested pure PyTorch | Avoid high-level torch wrappers and third-party tabular NN packages unless explicitly approved |
