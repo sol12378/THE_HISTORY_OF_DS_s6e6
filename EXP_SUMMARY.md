@@ -5,7 +5,7 @@
 | Type | Experiment | CV | LB | Notes |
 |---|---|---:|---:|---|
 | Baseline | exp001_baseline | 0.964030 | 0.96462 | LightGBM + color indices, official balanced accuracy |
-| Best CV | exp032_oof_stacker_with_sdss_prior | 0.966223 | | Logistic OOF stacker with SDSS prior base; effectively tied with exp030 and no_submit due negligible gain |
+| Best CV | exp036_oof_stacker_with_torch_mlp | 0.966349 | | Logistic OOF stacker with pure PyTorch MLP base; no_submit because confirmation stack did not support the gain |
 | Best LB | exp008_nina_weighted_vote | | 0.97074 | External public submission weighted vote; high leakage/overfitting risk |
 
 ## Experiments
@@ -44,3 +44,6 @@
 | exp032_oof_stacker_with_sdss_prior | 2026-06-06 | Add exp031 SDSS prior LightGBM base to the exp030 stack. | 0.966223 | | no_submit | Only +0.000001 over exp030 and relies on multiplier search, so API submission withheld |
 | exp033_lgbm_sdss_stable | 2026-06-06 | Train a LightGBM base with only stable SDSS17 prior/prototype features. | 0.963558 | | completed | Much healthier than exp031 but still below strong LightGBM/XGB bases |
 | exp034_oof_stacker_with_sdss_stable | 2026-06-06 | Add exp033 stable SDSS LightGBM base to the exp030 stack. | 0.966206 | | no_submit | Below exp032/exp030; stable SDSS base does not add useful stack diversity |
+| exp035_torch_tabular_mlp | 2026-06-06 | Train a pure PyTorch tabular MLP base for stack diversity. | 0.950964 | | completed | Weak standalone but provides neural-network diversity for stack diagnostics |
+| exp036_oof_stacker_with_torch_mlp | 2026-06-06 | Add exp035 pure PyTorch MLP base to the exp030 stack. | 0.966349 | | no_submit | New diagnostic best, but gain depends on sklearn stacker threshold search and pure PyTorch confirmation did not reproduce it |
+| exp037_torch_logit_stacker_with_mlp | 2026-06-06 | Confirm exp035 MLP base with pure PyTorch logit stacker. | 0.966175 | | no_submit | Below exp030/032, so exp036 is not confident enough for API submission |

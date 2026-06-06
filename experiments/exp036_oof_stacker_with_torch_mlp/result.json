@@ -1,0 +1,120 @@
+{
+  "exp_id": "exp036_oof_stacker_with_torch_mlp",
+  "created_at": "2026-06-06T13:12:49",
+  "purpose": "Train a nested-CV logistic OOF stacker over available self-model probabilities.",
+  "hypothesis": "A meta-model over LightGBM, CatBoost, and GPU XGBoost OOF probabilities can learn class-specific blending better than a fixed two-model grid.",
+  "official_metric": "balanced_accuracy",
+  "base_exp_ids": [
+    "exp009_lgbm_color_redshift_small",
+    "exp010_catboost_gpu_basic",
+    "exp016_xgboost_gpu_basic",
+    "exp019_xgboost_gpu_deep",
+    "exp023_lgbm_basic_fast",
+    "exp029_catboost_v3_style",
+    "exp035_torch_tabular_mlp"
+  ],
+  "feature_count": 42,
+  "best_C": 1.0,
+  "raw_cv_balanced_accuracy": 0.9662788843891579,
+  "cv_balanced_accuracy": 0.9663488335208718,
+  "cv_accuracy": 0.9594403365740187,
+  "multipliers": {
+    "GALAXY": 1.0,
+    "QSO": 1.1,
+    "STAR": 1.1
+  },
+  "candidate_summary": [
+    {
+      "C": 0.01,
+      "raw_cv_balanced_accuracy": 0.9662838616142672,
+      "threshold_cv_balanced_accuracy": 0.9662929251762917,
+      "threshold_cv_accuracy": 0.9593589297251046,
+      "multipliers": {
+        "GALAXY": 1.0,
+        "QSO": 1.0,
+        "STAR": 1.15
+      }
+    },
+    {
+      "C": 0.03,
+      "raw_cv_balanced_accuracy": 0.9662534248290258,
+      "threshold_cv_balanced_accuracy": 0.9662855770045026,
+      "threshold_cv_accuracy": 0.9594472648164796,
+      "multipliers": {
+        "GALAXY": 1.0,
+        "QSO": 1.1,
+        "STAR": 1.1
+      }
+    },
+    {
+      "C": 0.1,
+      "raw_cv_balanced_accuracy": 0.9663126675890134,
+      "threshold_cv_balanced_accuracy": 0.9663387243275472,
+      "threshold_cv_accuracy": 0.9596412556053812,
+      "multipliers": {
+        "GALAXY": 1.0,
+        "QSO": 1.05,
+        "STAR": 1.1
+      }
+    },
+    {
+      "C": 0.3,
+      "raw_cv_balanced_accuracy": 0.9663099918481507,
+      "threshold_cv_balanced_accuracy": 0.9663453833185702,
+      "threshold_cv_accuracy": 0.9596551120903027,
+      "multipliers": {
+        "GALAXY": 1.0,
+        "QSO": 1.05,
+        "STAR": 1.1
+      }
+    },
+    {
+      "C": 1.0,
+      "raw_cv_balanced_accuracy": 0.9662788843891579,
+      "threshold_cv_balanced_accuracy": 0.9663488335208718,
+      "threshold_cv_accuracy": 0.9594403365740187,
+      "multipliers": {
+        "GALAXY": 1.0,
+        "QSO": 1.1,
+        "STAR": 1.1
+      }
+    },
+    {
+      "C": 3.0,
+      "raw_cv_balanced_accuracy": 0.966314603471119,
+      "threshold_cv_balanced_accuracy": 0.9663150801052645,
+      "threshold_cv_accuracy": 0.9604483958520612,
+      "multipliers": {
+        "GALAXY": 1.0,
+        "QSO": 1.05,
+        "STAR": 1.0
+      }
+    },
+    {
+      "C": 10.0,
+      "raw_cv_balanced_accuracy": 0.9662962627948063,
+      "threshold_cv_balanced_accuracy": 0.9663181592547404,
+      "threshold_cv_accuracy": 0.9594819060287834,
+      "multipliers": {
+        "GALAXY": 1.0,
+        "QSO": 1.1,
+        "STAR": 1.1
+      }
+    }
+  ],
+  "submission_distribution": {
+    "GALAXY": 155651,
+    "QSO": 51593,
+    "STAR": 40191
+  },
+  "submission_checks": {
+    "columns_match_sample_submission": true,
+    "row_count_matches_sample_submission": true,
+    "id_matches_sample_submission": true,
+    "labels_are_valid_strings": true,
+    "no_missing_values": true,
+    "all_passed": true
+  },
+  "leakage_risk": "Medium: base predictions are OOF, but meta-model hyperparameters and class multipliers are selected on OOF labels.",
+  "overfitting_risk": "Medium-high: nested CV reduces direct stacker leakage, but multiplier search can still overfit."
+}

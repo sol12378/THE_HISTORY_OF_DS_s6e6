@@ -34,6 +34,9 @@
 | [[exp032_oof_stacker_with_sdss_prior]] | 2026-06-06 | no_submit | 0.966223 | | Effectively tied with exp030; no confident API submission |
 | [[exp033_lgbm_sdss_stable]] | 2026-06-06 | completed | 0.963558 | | Stable SDSS prior/prototype LightGBM; healthier but not strong |
 | [[exp034_oof_stacker_with_sdss_stable]] | 2026-06-06 | no_submit | 0.966206 | | Below exp030/032, no API submission |
+| [[exp035_torch_tabular_mlp]] | 2026-06-06 | completed | 0.950964 | | Pure PyTorch MLP; weak standalone but useful diversity diagnostic |
+| [[exp036_oof_stacker_with_torch_mlp]] | 2026-06-06 | no_submit | 0.966349 | | New diagnostic best but not confirmed by pure PyTorch stacker |
+| [[exp037_torch_logit_stacker_with_mlp]] | 2026-06-06 | no_submit | 0.966175 | | Pure PyTorch confirmation below exp030/032 |
 
 | Exp | Status | CV | LB | Decision |
 |---|---|---:|---:|---|
