@@ -43,6 +43,7 @@
 | [[exp041_oof_stacker_with_mlp_and_sdss_stable]] | 2026-06-06 | no_submit | 0.966379 | | MLP + exp033, below exp038 |
 | [[exp042_oof_stacker_mlp_sdss_seed777]] | 2026-06-06 | no_submit | 0.966398 | | Alternate meta split confirms exp038 base set |
 | [[exp043_oof_stacker_mlp_sdss_seed31415]] | 2026-06-06 | no_submit | 0.966354 | | Alternate meta split confirms exp038 base set |
+| [[exp044_seed_average_stacker]] | 2026-06-06 | no_submit | 0.966383 | | Seed-average candidate below exp038/042 |
 
 | Exp | Status | CV | LB | Decision |
 |---|---|---:|---:|---|

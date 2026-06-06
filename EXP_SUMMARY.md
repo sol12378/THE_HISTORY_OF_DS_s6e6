@@ -53,3 +53,4 @@
 | exp041_oof_stacker_with_mlp_and_sdss_stable | 2026-06-06 | Add exp033 and exp035 to the exp030 stack. | 0.966379 | | no_submit | Strong raw CV but below exp038/040 |
 | exp042_oof_stacker_mlp_sdss_seed777 | 2026-06-06 | Re-evaluate exp038 base set with meta fold seed 777. | 0.966398 | | no_submit | Confirms exp038 base set is not only seed-2026 luck; raw threshold-free CV is also strong |
 | exp043_oof_stacker_mlp_sdss_seed31415 | 2026-06-06 | Re-evaluate exp038 base set with meta fold seed 31415. | 0.966354 | | no_submit | Still above exp030/032, but below exp038/042; next step is seed-averaged submission candidate |
+| exp044_seed_average_stacker | 2026-06-06 | Average exp038/042/043 stacker seed probabilities. | 0.966383 | | no_submit | Reduces seed arbitrariness but below exp038/042, so not the best CV submission candidate |
