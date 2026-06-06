@@ -5,7 +5,7 @@
 | Type | Experiment | CV | LB | Notes |
 |---|---|---:|---:|---|
 | Baseline | exp001_baseline | 0.964030 | 0.96462 | LightGBM + color indices, official balanced accuracy |
-| Best CV | exp024_oof_stacker_with_lgbm_basic | 0.966112 | | Logistic OOF stacker with an additional basic LightGBM base; API submission failed likely due daily limit |
+| Best CV | exp030_oof_stacker_with_cat_v3 | 0.966222 | | Logistic OOF stacker with CatBoost v3-style SDSS/categorical base; no_submit due small gain |
 | Best LB | exp008_nina_weighted_vote | | 0.97074 | External public submission weighted vote; high leakage/overfitting risk |
 
 ## Experiments
@@ -38,3 +38,5 @@
 | exp025_lgbm_color_regularized | 2026-06-05 | Train a regularized stochastic color/redshift LightGBM base. | 0.962930 | | completed | Weak standalone; tested only as stack diversity |
 | exp026_oof_stacker_with_two_lgbm | 2026-06-05 | Add both exp023 and exp025 LightGBM bases to the stack. | 0.966092 | | no_submit | Below exp024; no API submission |
 | exp028_torch_logit_stacker | 2026-06-06 | Run a pure PyTorch CDeotte-style logit multi-seed stacker. | 0.965935 | | no_submit | Pure PyTorch implementation completed; below exp024 CV, so no API submission |
+| exp029_catboost_v3_style | 2026-06-06 | Train a CatBoost v3-style native categorical model with low-weight SDSS17 original rows. | 0.964213 | | completed | Much stronger than prior CatBoost; useful stack diversity, not standalone |
+| exp030_oof_stacker_with_cat_v3 | 2026-06-06 | Add exp029 CatBoost v3-style base to the exp024 stack. | 0.966222 | | no_submit | New best CV, but only +0.000110 over exp024 so API submission withheld |
